@@ -1,114 +1,56 @@
 <div align="center">
 
-# 🧠 EduMind AI
+# 🧠 AI Resume Analyzer
+### Intelligent ATS Optimization & Resume Intelligence Platform
 
-### *Transform Notes into Knowledge*
+**Transforming resumes into interview magnets — powered by NLP, Semantic AI, and Machine Learning.**
 
-**An AI-powered study assistant that lets students upload PDFs, chat with their notes, generate summaries, create quizzes and flashcards — and learn smarter using RAG, semantic search, and cutting-edge NLP.**
-
-<br/>
-
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-Powered-121212?style=for-the-badge&logo=chainlink&logoColor=white)
-![RAG](https://img.shields.io/badge/RAG-Architecture-8A2BE2?style=for-the-badge)
-![NLP](https://img.shields.io/badge/NLP-Enabled-09A3D5?style=for-the-badge)
-![Open Source](https://img.shields.io/badge/Open%20Source-❤️-orange?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
-
-<br/>
-
-> 📚 *Stop passively reading. Start actively learning. EduMind AI turns your study material into an intelligent, interactive knowledge system — available 24/7.*
+[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![NLP](https://img.shields.io/badge/NLP-spaCy-09A3D5?style=for-the-badge&logo=spacy&logoColor=white)](https://spacy.io/)
+[![AI](https://img.shields.io/badge/AI-Semantic%20Matching-8A2BE2?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](#license)
+[![Contributions](https://img.shields.io/badge/Contributions-Welcome-orange?style=for-the-badge)](#-contribution-guidelines)
 
 </div>
 
 ---
 
-## 📌 Table of Contents
+## 📌 Overview
 
-- [Overview](#-overview)
-- [Core Features](#-core-features)
-- [Demo Workflow](#-demo-workflow)
-- [Tech Stack](#-tech-stack)
-- [Architecture](#-architecture)
-- [Folder Structure](#-folder-structure)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Screenshots](#-screenshots)
-- [Future Enhancements](#-future-enhancements)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Author](#-author)
+**AI Resume Analyzer** is an intelligent resume evaluation platform that analyzes resumes against job descriptions using **Natural Language Processing** and **semantic similarity models**, giving job seekers a real, data-backed picture of how their resume performs against Applicant Tracking Systems (ATS).
 
----
+### The Problem
 
-## 🧩 Overview
+Over **75% of resumes** are filtered out by ATS software before a human recruiter ever sees them — often due to missing keywords, poor formatting, or weak alignment with the job description. Most candidates have no visibility into *why* they're getting rejected.
 
-Students today are overwhelmed — with dense textbooks, lengthy lecture slides, and limited time to absorb everything. Traditional studying is passive, inefficient, and often frustrating.
+### The Solution
 
-**EduMind AI** changes that.
+This platform gives candidates the same lens recruiters and ATS engines use — parsing resumes, extracting skills, computing semantic relevance to a target job description, and surfacing **specific, actionable gaps** to close before hitting submit.
 
-It is a full-stack AI study assistant that transforms raw study material into an interactive, intelligent learning experience:
+### Who It Helps
 
-- 📄 **Upload any PDF** — textbooks, notes, research papers, slides
-- 💬 **Chat with your documents** — ask questions in plain English, get instant answers grounded in your material
-- 🧾 **Auto-generate summaries** — extract key insights in seconds
-- 🧪 **Create quizzes** — test your understanding with AI-generated questions
-- 🃏 **Build flashcards** — spaced repetition-ready study cards from your notes
-- 🔍 **Semantic search** — find relevant content even when you don't use the exact words
-
-Built on **Retrieval-Augmented Generation (RAG)**, EduMind AI doesn't hallucinate — it answers from *your* documents, giving you accurate, grounded, contextual responses every time.
+- 🎓 **Students & fresh graduates** building their first ATS-friendly resume
+- 💼 **Job seekers** tailoring resumes for specific roles
+- 🔄 **Career switchers** identifying transferable and missing skills
+- 🧑‍💻 **Recruiters/mentors** who want a fast, objective resume screen
 
 ---
 
-## ✨ Core Features
+## ✨ Features
 
 | Feature | Description |
 |---|---|
-| 📄 **PDF Upload** | Upload single or multiple PDFs for instant processing |
-| 💬 **Chat with PDFs** | Ask natural language questions and get context-aware answers |
-| 🧾 **AI Summarization** | Generate concise summaries of chapters, sections, or full documents |
-| 🔍 **Semantic Search** | Find relevant content using meaning-based search, not just keywords |
-| 🧪 **Quiz Generation** | Auto-generate MCQs and short-answer questions from your material |
-| 🃏 **Flashcard Creation** | Create study-ready flashcards from key concepts and definitions |
-| 💡 **AI Concept Explanation** | Get plain-English explanations of complex topics from your notes |
-| 📝 **Smart Revision Notes** | Extract bullet-point revision notes optimized for quick review |
-| ❓ **Important Question Prediction** | AI predicts likely exam questions based on document content |
-| 🎯 **Personalized Learning** | Adaptive responses tailored to what you've uploaded and asked |
-
----
-
-## 🔄 Demo Workflow
-
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        EduMind AI — Pipeline                         │
-└─────────────────────────────────────────────────────────────────────┘
-
-  📄 Upload PDF
-       │
-       ▼
-  📖 Text Extraction (PDFPlumber / PyPDF)
-       │
-       ▼
-  ✂️  Text Chunking (LangChain RecursiveCharacterTextSplitter)
-       │
-       ▼
-  🔢 Embedding Generation (Sentence Transformers)
-       │
-       ▼
-  🗄️  Vector Storage (FAISS)
-       │
-       ▼
-  🔍 Semantic Retrieval (Top-K similarity search)
-       │
-       ▼
-  🤖 LLM Response Generation (OpenAI API / Ollama)
-       │
-       ▼
-  💬 Answer · Summary · Quiz · Flashcards
-```
+| 📄 **Resume PDF Upload** | Upload resumes directly in PDF format for instant parsing |
+| 🎯 **ATS Score Analysis** | Get a quantified ATS-compatibility score for your resume |
+| 🔍 **Job Description Matching** | Compare your resume against any job description in real time |
+| 🧩 **Skill Extraction** | Automatically extract technical and soft skills from resume text |
+| ⚠️ **Missing Skills Detection** | Identify high-impact skills present in the JD but missing from your resume |
+| 🧠 **Semantic Similarity Matching** | Go beyond keyword matching using embedding-based semantic relevance |
+| 💡 **Resume Suggestions** | Receive targeted suggestions to improve resume-job alignment |
+| 🤖 **AI Feedback** | Get structured, AI-generated feedback on resume quality |
+| 🗣️ **Interview Question Generation** | Auto-generate likely interview questions based on resume + JD |
+| 📝 **Resume Summarization** | Generate a concise professional summary of the uploaded resume |
 
 ---
 
@@ -116,300 +58,195 @@ Built on **Retrieval-Augmented Generation (RAG)**, EduMind AI doesn't hallucinat
 
 <div align="center">
 
-| Layer | Technology | Purpose |
-|---|---|---|
-| **Frontend** | `Streamlit` | Interactive web UI |
-| **Backend** | `Python 3.10+` | Core logic and pipeline orchestration |
-| **LLM Framework** | `LangChain` | RAG pipeline, chains, and prompt management |
-| **Embeddings** | `Sentence Transformers` | Semantic vector generation |
-| **Vector Database** | `FAISS` | Fast similarity search and retrieval |
-| **LLM** | `OpenAI API` / `Ollama` | Answer generation and text understanding |
-| **PDF Processing** | `PDFPlumber` + `PyPDF` | Text extraction from PDF documents |
-| **Search** | `Semantic Search` | Meaning-based document retrieval |
+| Layer | Technology |
+|---|---|
+| **Language** | Python 3.9+ |
+| **Web Framework** | Streamlit |
+| **NLP Engine** | spaCy |
+| **ML Toolkit** | scikit-learn |
+| **Semantic Embeddings** | Sentence Transformers |
+| **PDF Parsing** | pdfplumber |
+| **Data Handling** | Pandas |
+| **Numerical Computing** | NumPy |
 
 </div>
 
 ---
 
-## 🏗️ Architecture
-
-EduMind AI is built on a **Retrieval-Augmented Generation (RAG)** architecture — a proven pattern that combines the precision of document retrieval with the power of large language models.
-
-### How It Works
-
-**① PDF Ingestion**
-When a PDF is uploaded, EduMind AI uses `PDFPlumber` and `PyPDF` to extract raw text, preserving structure across headings, paragraphs, and tables.
-
-**② Text Chunking**
-The extracted text is split into overlapping chunks using LangChain's `RecursiveCharacterTextSplitter`. Overlapping ensures no context is lost at chunk boundaries.
-
-**③ Embedding Generation**
-Each chunk is converted into a high-dimensional vector using `Sentence Transformers`. These vectors capture the *semantic meaning* of the text — not just its keywords.
-
-**④ Vector Storage (FAISS)**
-All embeddings are stored in a FAISS vector index — an ultra-fast in-memory vector database optimized for similarity search at scale.
-
-**⑤ Semantic Retrieval**
-When a user asks a question, the query is also embedded and compared against the stored vectors. The top-K most semantically similar chunks are retrieved as context.
-
-**⑥ LLM Response Generation**
-The retrieved chunks + user query are passed to the LLM (OpenAI or Ollama) via a LangChain prompt chain. The model generates a grounded, accurate response — with no hallucination, because it's anchored to your documents.
+## 🏗️ System Architecture
 
 ```
-User Query
-    │
-    ▼
-Query Embedding → FAISS Similarity Search → Top-K Chunks
-                                                  │
-                                                  ▼
-                                     LangChain Prompt Chain
-                                                  │
-                                                  ▼
-                                        LLM (OpenAI / Ollama)
-                                                  │
-                                                  ▼
-                                         Grounded AI Response
+┌──────────┐     ┌────────────────┐     ┌───────────────┐     ┌──────────────────┐     ┌──────────────────┐
+│   User   │ ──▶ │ Upload Resume  │ ──▶ │ NLP Processing │ ──▶ │ Skill Extraction  │ ──▶ │   ATS Analysis    │
+└──────────┘     └────────────────┘     └───────────────┘     └──────────────────┘     └────────┬─────────┘
+                                                                                                    │
+                                                                                                    ▼
+                                                                                          ┌──────────────────┐
+                                                                                          │  Recommendations  │
+                                                                                          └──────────────────┘
 ```
+
+**Flow explained:**
+1. **User** uploads a resume (PDF) and pastes a target job description
+2. **NLP Processing** cleans and tokenizes text, extracts entities
+3. **Skill Extraction** identifies technical/soft skills using spaCy + custom skill taxonomy
+4. **ATS Analysis** computes keyword overlap + semantic similarity score
+5. **Recommendations** surfaces missing skills and improvement suggestions
 
 ---
 
-## 📁 Folder Structure
+## ⚙️ Installation Guide
 
-```
-Edumind-AI/
-│
-├── app.py                          # Main Streamlit application entry point
-├── requirements.txt                # Python dependencies
-├── .env.example                    # Environment variable template
-├── README.md                       # Project documentation
-├── LICENSE                         # MIT License
-│
-├── core/
-│   ├── __init__.py
-│   ├── pdf_processor.py            # PDF text extraction (PDFPlumber + PyPDF)
-│   ├── chunker.py                  # Text splitting and chunking logic
-│   ├── embedder.py                 # Sentence Transformer embedding generation
-│   ├── vector_store.py             # FAISS index creation and retrieval
-│   └── rag_pipeline.py             # LangChain RAG chain orchestration
-│
-├── features/
-│   ├── __init__.py
-│   ├── summarizer.py               # AI summarization module
-│   ├── quiz_generator.py           # Quiz and MCQ generation
-│   ├── flashcard_generator.py      # Flashcard creation module
-│   ├── question_predictor.py       # Important question prediction
-│   └── revision_notes.py           # Smart revision note generation
-│
-├── ui/
-│   ├── components.py               # Reusable Streamlit UI components
-│   ├── layout.py                   # Page layout and sidebar
-│   └── styles.py                   # Custom CSS styling
-│
-├── uploads/                        # Temporary PDF upload storage
-│   └── .gitkeep
-│
-├── vector_db/                      # Persisted FAISS vector indexes
-│   └── .gitkeep
-│
-├── utils/
-│   ├── helpers.py                  # General utility functions
-│   ├── validators.py               # Input validation
-│   └── exporters.py                # Export results to PDF/JSON
-│
-└── tests/
-    ├── test_pdf_processor.py
-    ├── test_embedder.py
-    ├── test_rag_pipeline.py
-    └── test_quiz_generator.py
-```
-
----
-
-## 🚀 Installation
-
-### Prerequisites
-
-- Python 3.10 or higher
-- pip
-- Git
-- OpenAI API key **or** Ollama installed locally
-
-### Step 1 — Clone the Repository
-
+### 1. Clone the Repository
 ```bash
-git clone https://github.com/ItsRavi-AIML/Edumind-AI.git
-cd Edumind-AI
+git clone https://github.com/ItsRavi-AIML/ai-resume-analyzer.git
+cd ai-resume-analyzer
 ```
 
-### Step 2 — Create a Virtual Environment
-
+### 2. Create a Virtual Environment
 ```bash
-# Create virtual environment
 python -m venv venv
 
-# Activate (Windows PowerShell)
+# Activate on Windows
 venv\Scripts\activate
 
-# Activate (macOS/Linux)
+# Activate on macOS/Linux
 source venv/bin/activate
 ```
 
-### Step 3 — Install Dependencies
-
+### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
+python -m spacy download en_core_web_sm
 ```
 
-### Step 4 — Configure Environment Variables
-
-```bash
-# Copy the example env file
-cp .env.example .env
-```
-
-Open `.env` and add your API key:
-
-```env
-OPENAI_API_KEY=your_openai_api_key_here
-
-# If using Ollama instead (local, free)
-OLLAMA_MODEL=llama3
-```
-
-> 💡 **Don't have an OpenAI key?** You can run EduMind AI fully locally using [Ollama](https://ollama.com/) — no API key required.
-
-### Step 5 — Run the Application
-
+### 4. Run the Streamlit App
 ```bash
 streamlit run app.py
 ```
 
-> The app opens automatically at `http://localhost:8501`
+The app will launch at `http://localhost:8501` 🚀
 
 ---
 
-## 📖 Usage
+## 🚀 Usage
 
-**Step 1 — Upload Your Study Material**
-> Navigate to the Upload section. Select one or more PDF files — textbooks, lecture notes, research papers, anything.
-
-**Step 2 — Process the Document**
-> Click **"Process PDF"**. EduMind AI extracts text, chunks it, generates embeddings, and builds a FAISS vector index — all in seconds.
-
-**Step 3 — Chat with Your Notes**
-> Go to the **Chat** tab. Type any question about your document in plain English. Get instant, context-grounded answers.
-
-**Step 4 — Generate a Summary**
-> Click **"Summarize"** to get a concise, structured summary of the entire document or a specific chapter.
-
-**Step 5 — Create a Quiz**
-> Use the **Quiz** tab. Select the number of questions and type (MCQ / short answer). EduMind AI generates a ready-to-attempt quiz from your material.
-
-**Step 6 — Build Flashcards**
-> Switch to **Flashcards**. Get spaced-repetition-ready cards covering key terms, definitions, and concepts from your notes.
-
-**Step 7 — Predict Important Questions**
-> Use **Question Predictor** to get AI-generated likely exam questions based on the document's emphasis and content structure.
+1. **Launch the app** using the command above
+2. **Upload your resume** in PDF format via the sidebar uploader
+3. **Paste the target job description** into the input field
+4. Click **"Analyze Resume"**
+5. Review your:
+   - ATS Compatibility Score
+   - Semantic Match Percentage
+   - Extracted Skills List
+   - Missing Skills Report
+   - AI-Generated Improvement Suggestions
+6. **Iterate** — update your resume and re-run the analysis until your match score improves
 
 ---
 
-## 📸 Screenshots
+## 🖼️ Screenshots
 
 <div align="center">
 
-> 📌 *Screenshots will be added once the UI is finalized.*
-
-| View | Preview |
+| Dashboard View | ATS Score Report |
 |---|---|
-| 🏠 Home / Upload Screen | `[ Screenshot Placeholder ]` |
-| 💬 Chat Interface | `[ Screenshot Placeholder ]` |
-| 🧾 Summary Generation | `[ Screenshot Placeholder ]` |
-| 🧪 Quiz Generation | `[ Screenshot Placeholder ]` |
-| 🃏 Flashcard View | `[ Screenshot Placeholder ]` |
+| *[Add screenshot here]* | *[Add screenshot here]* |
+
+| Skill Gap Analysis | Resume Suggestions |
+|---|---|
+| *[Add screenshot here]* | *[Add screenshot here]* |
 
 </div>
 
----
-
-## 🔮 Future Enhancements
-
-| Feature | Description | Priority |
-|---|---|---|
-| 🎙️ **Voice Assistant** | Ask questions and get answers via voice input/output | 🔴 High |
-| 🖊️ **OCR for Handwritten Notes** | Scan and process handwritten notes using OCR | 🔴 High |
-| 🌍 **Multilingual Support** | Study in and query across multiple languages | 🟡 Medium |
-| 📱 **Mobile App** | React Native / Flutter companion app | 🟡 Medium |
-| 🧑‍🏫 **AI Tutor Mode** | Adaptive, Socratic-style tutoring conversations | 🔴 High |
-| 📊 **Learning Analytics** | Track study progress, weak areas, and performance over time | 🟡 Medium |
-| ☁️ **Cloud Deployment** | One-click deploy to AWS / GCP / Streamlit Cloud | 🔴 High |
-| 🔗 **Google Drive Integration** | Import PDFs directly from Google Drive | 🟡 Medium |
-| 🧠 **Memory Across Sessions** | Persistent vector DB per user for long-term context | 🔴 High |
+> 📌 Replace the placeholders above with actual screenshots stored in a `/assets` or `/screenshots` folder.
 
 ---
 
-## 🤝 Contributing
+## 🔮 Future Improvements
 
-Open-source contributions make projects like this possible. All contributions — big or small — are genuinely welcome.
+- 🔗 **LinkedIn Integration** — import profile data directly for analysis
+- 🧭 **AI Career Recommendations** — suggest roles based on skill profile
+- 🌍 **Multilingual Support** — analyze resumes in multiple languages
+- 🎙️ **Voice Assistant** — voice-guided resume review experience
+- ☁️ **Cloud Deployment** — one-click deploy on AWS/GCP/Azure with persistent user history
 
-```bash
-# Fork the repository on GitHub
+---
 
-# Clone your fork
-git clone https://github.com/YOUR_USERNAME/Edumind-AI.git
+## 📂 Folder Structure
 
-# Create a feature branch
-git checkout -b feature/YourFeatureName
-
-# Make your changes and commit
-git commit -m "Add: YourFeatureName — brief description"
-
-# Push to your fork
-git push origin feature/YourFeatureName
-
-# Open a Pull Request on GitHub
+```
+ai-resume-analyzer/
+│
+├── app.py                     # Main Streamlit application entry point
+├── requirements.txt           # Project dependencies
+├── README.md                  # Project documentation
+│
+├── src/
+│   ├── __init__.py
+│   ├── resume_parser.py       # PDF parsing and text extraction
+│   ├── nlp_engine.py          # spaCy NLP pipeline
+│   ├── skill_extractor.py     # Skill identification logic
+│   ├── ats_scorer.py          # ATS scoring algorithm
+│   ├── semantic_matcher.py    # Sentence Transformer similarity engine
+│   └── recommender.py         # Suggestion & feedback generation
+│
+├── data/
+│   ├── skills_taxonomy.json   # Master skill keyword database
+│   └── sample_resumes/        # Sample resumes for testing
+│
+├── assets/
+│   └── screenshots/           # UI screenshots for documentation
+│
+├── tests/
+│   └── test_pipeline.py       # Unit tests
+│
+└── utils/
+    └── helpers.py              # Shared utility functions
 ```
 
-### Guidelines
+---
 
-- ✅ Follow PEP8 coding standards
-- ✅ Write clear, commented code
-- ✅ Add tests for new features in `/tests`
-- ✅ Update the README if your changes affect usage
-- ✅ Open an issue before starting major changes
-- ❌ Do not commit directly to `main`
+## 📊 Sample Output
 
-> Found a bug? [Open an issue](https://github.com/ItsRavi-AIML/Edumind-AI/issues)
-> Have an idea? [Start a discussion](https://github.com/ItsRavi-AIML/Edumind-AI/discussions)
+```
+Resume Analysis Report
+────────────────────────────────
+ATS Compatibility Score:     82/100
+Semantic Match Score:        78.4%
+
+✅ Matched Skills:
+   Python, Machine Learning, NLP, SQL, Data Analysis
+
+⚠️ Missing Skills:
+   Docker, AWS, CI/CD
+
+💡 Suggestions:
+   - Add measurable achievements to your experience section
+   - Include "Docker" and "AWS" if you have working exposure
+   - Reduce redundant skill repetition in the summary section
+────────────────────────────────
+```
+
+---
+
+## 🤝 Contribution Guidelines
+
+Contributions are welcome and appreciated! To contribute:
+
+1. **Fork** the repository
+2. Create a new branch: `git checkout -b feature/your-feature-name`
+3. Commit your changes: `git commit -m "Add: your feature"`
+4. Push to your branch: `git push origin feature/your-feature-name`
+5. Open a **Pull Request**
+
+Please ensure your code follows PEP8 standards and includes relevant tests before submitting.
 
 ---
 
 ## 📄 License
 
-Distributed under the **MIT License**.
-
-```
-MIT License
-
-Copyright (c) 2025 N Raja Ravi Varma
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -417,12 +254,10 @@ SOFTWARE.
 
 <div align="center">
 
-| | |
-|---|---|
-| **Name** | N Raja Ravi Varma |
-| **LinkedIn** | [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/raja-ravi-varma-n/) |
-| **GitHub** | [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github)](https://github.com/ItsRavi-AIML) |
-| **Email** | [![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nimmagaddaravivarma@gmail.com) |
+**[Your Name]**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/your-profile)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ItsRavi-AIML)
 
 </div>
 
@@ -430,8 +265,6 @@ SOFTWARE.
 
 <div align="center">
 
-**⭐ If EduMind AI helped you study smarter, consider starring the repo — it helps others find it.**
-
-*Built with ❤️ using AI and modern NLP technologies.*
+**⭐ If you find this project useful, consider giving it a star!**
 
 </div>
