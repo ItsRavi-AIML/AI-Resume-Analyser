@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(57, 230, 181, 0.14), transparent 28%),
+    radial-gradient(circle at 84% 0%, rgba(92, 200, 255, 0.13), transparent 27%),
+    radial-gradient(circle at 55% 110%, rgba(255, 107, 152, 0.08), transparent 30%),
+    #08090d;
+  color: #f8fafc;
+  text-rendering: geometricPrecision;
+}
+
+::selection {
+  background: rgba(57, 230, 181, 0.35);
+}
+
+.glass {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.082), rgba(255, 255, 255, 0.045)),
+    rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 24px 90px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(24px) saturate(1.25);
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 34%);
+  opacity: 0.5;
+}
+
+.metric-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.soft-divider {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.06));
+  background-size: 220% 100%;
+  animation: shimmer 1.45s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 120% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}

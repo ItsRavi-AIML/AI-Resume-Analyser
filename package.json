@@ -1,0 +1,17 @@
+{
+  "name": "resume-analyser",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AI-powered resume analyzer with Next.js and FastAPI.",
+  "scripts": {
+    "dev": "concurrently \"npm --prefix apps/web run dev\" \"npm run api\"",
+    "web": "npm --prefix apps/web run dev",
+    "api": "cd services/api && python -m uvicorn app.main:app --reload --port 8000",
+    "install:all": "npm --prefix apps/web install && python -m pip install -r services/api/requirements.txt",
+    "lint": "npm --prefix apps/web run lint",
+    "build": "npm --prefix apps/web run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
